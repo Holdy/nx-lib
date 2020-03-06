@@ -2,15 +2,22 @@
 
 const nx = require('../index');
 
-console.log('aegaeg');
+/*
 const testPipe = nx.buildPipeline(
     nx.numberRange.emitEachNumber(),
-    nx.number.toFileName("blah{0}.txt"),
+    nx.number.toFizzBuzz(),
     nx.any.writeToConsole()
 );
 
-testPipe.process({start:-10, end:10}, null, null, () => {
-console.log('done');
+*/
+
+const testPipe = nx.buildPipeline(
+    nx.numberRange.emitEachNumber(),
+    nx.number.toFileName('go-{0}-go'),
+    nx.any.writeToConsole()
+);
 
 
+testPipe.process({start:1, end:1000}, null, null, () => {
+   console.log('done');
 });
